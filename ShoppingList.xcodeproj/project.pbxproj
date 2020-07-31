@@ -18,6 +18,7 @@
 		4B8A67FA24D46AAF00938206 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B8A67F924D46AAF00938206 /* Assets.xcassets */; };
 		4B8A67FD24D46AAF00938206 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B8A67FB24D46AAF00938206 /* LaunchScreen.storyboard */; };
 		4B8A680B24D46D8A00938206 /* ShoppingList+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8A680A24D46D8A00938206 /* ShoppingList+Convenience.swift */; };
+		4B9E3B9724D48BAA00A0E217 /* GroceryItemDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9E3B9624D48BAA00A0E217 /* GroceryItemDetailTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		4B8A67FC24D46AAF00938206 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4B8A67FE24D46AAF00938206 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B8A680A24D46D8A00938206 /* ShoppingList+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShoppingList+Convenience.swift"; sourceTree = "<group>"; };
+		4B9E3B9624D48BAA00A0E217 /* GroceryItemDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryItemDetailTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				4B637DF624D47748008D3021 /* GroceryItemTableViewController.swift */,
+				4B9E3B9624D48BAA00A0E217 /* GroceryItemDetailTableViewController.swift */,
 				4B8A680924D46CD700938206 /* CustomCells */,
 			);
 			path = ViewControllers;
@@ -205,6 +208,7 @@
 				4B637DF524D46F53008D3021 /* ShoppingListController.swift in Sources */,
 				4B637DF724D47748008D3021 /* GroceryItemTableViewController.swift in Sources */,
 				4B8A67F824D46AAE00938206 /* ShoppingList.xcdatamodeld in Sources */,
+				4B9E3B9724D48BAA00A0E217 /* GroceryItemDetailTableViewController.swift in Sources */,
 				4B8A680B24D46D8A00938206 /* ShoppingList+Convenience.swift in Sources */,
 				4B8A67EE24D46AAE00938206 /* AppDelegate.swift in Sources */,
 				4B637DF924D47892008D3021 /* GroceryItemTableViewCell.swift in Sources */,

@@ -6,7 +6,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Grocery Item Table View Controller-->
+        <!--Grocery List-->
         <scene sceneID="lbl-UM-Anl">
             <objects>
                 <tableViewController id="V5o-gy-ZNX" customClass="GroceryItemTableViewController" customModule="ShoppingList" customModuleProvider="target" sceneMemberID="viewController">
@@ -14,9 +14,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="5BO-Ew-zUw">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="groceryItemCell" rowHeight="72" id="v8k-JY-Xav" customClass="GroceryItemTableViewCell" customModule="ShoppingList" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="72"/>
+                                <rect key="frame" x="0.0" y="72" width="414" height="72"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="v8k-JY-Xav" id="EeT-57-c5V">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="72"/>
@@ -54,6 +59,7 @@
                                 <connections>
                                     <outlet property="groceryItemLabel" destination="Qyz-lA-3dx" id="eV4-H6-dnx"/>
                                     <outlet property="isInCartButton" destination="D6E-OI-2bR" id="GCe-yn-BIL"/>
+                                    <segue destination="LGt-0t-8na" kind="show" identifier="toDetailVC" id="dIJ-zk-iGX"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -62,7 +68,7 @@
                             <outlet property="delegate" destination="V5o-gy-ZNX" id="O2l-1t-keE"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="3KV-lK-wfP">
+                    <navigationItem key="navigationItem" title="Grocery List" id="3KV-lK-wfP">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="cWg-Ph-WOo">
                             <connections>
                                 <action selector="addButtonTapped:" destination="V5o-gy-ZNX" id="HDK-6I-ZiT"/>
@@ -73,6 +79,63 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y2B-xZ-f9z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1621.7391304347827" y="201.5625"/>
+        </scene>
+        <!--Grocery Item Detail Table View Controller-->
+        <scene sceneID="5hJ-7V-rK6">
+            <objects>
+                <tableViewController id="LGt-0t-8na" customClass="GroceryItemDetailTableViewController" customModule="ShoppingList" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="omL-bN-QvI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="Nutrition Info" id="MBi-Pc-AMp">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="188" id="pjb-KS-Zih">
+                                        <rect key="frame" x="0.0" y="55.5" width="414" height="188"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pjb-KS-Zih" id="SQ3-5g-JUD">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="188"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter Nutrition Info here:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Fcy-j2-fcE">
+                                                    <rect key="frame" x="12" y="0.0" width="382" height="188"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Fcy-j2-fcE" firstAttribute="top" secondItem="SQ3-5g-JUD" secondAttribute="top" id="F4i-bC-CU3"/>
+                                                <constraint firstAttribute="bottom" secondItem="Fcy-j2-fcE" secondAttribute="bottom" id="GdC-MT-uHr"/>
+                                                <constraint firstItem="Fcy-j2-fcE" firstAttribute="leading" secondItem="SQ3-5g-JUD" secondAttribute="leading" constant="12" id="pYV-g7-bTu"/>
+                                                <constraint firstAttribute="trailing" secondItem="Fcy-j2-fcE" secondAttribute="trailing" constant="20" id="yL0-hT-WJG"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="LGt-0t-8na" id="Kko-rz-Vjh"/>
+                            <outlet property="delegate" destination="LGt-0t-8na" id="WKl-qi-O4x"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="31w-WP-MZl">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="JFb-EO-aD4">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="LGt-0t-8na" id="Hxg-OS-dgS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="nutritionInfoTextView" destination="Fcy-j2-fcE" id="RJV-AD-L2i"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9aN-xT-nEb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2430.434782608696" y="201.5625"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BnI-Qm-wva">

@@ -17,6 +17,8 @@ class ShoppingListController {
     // MARK: - Properties
     var fetchedResultsController: NSFetchedResultsController<ShoppingList>
     
+    var predicate: NSPredicate?
+    
     init() {
         let request: NSFetchRequest<ShoppingList> = ShoppingList.fetchRequest()
         
@@ -34,8 +36,13 @@ class ShoppingListController {
     }
     
     // MARK: - CRUD
-    func addItem(groceryItem: String) {
-        _ = ShoppingList(groceryItem: groceryItem)
+    func addItem(groceryItem: String, nutritionInfo: String) {
+        _ = ShoppingList(groceryItem: groceryItem, nutritionInfo: nutritionInfo)
+        saveToPersistence()
+    }
+    
+    func update(groceryItem: ShoppingList, nutritionInfo: String) {
+        groceryItem.nutritionInfo = nutritionInfo
         saveToPersistence()
     }
     

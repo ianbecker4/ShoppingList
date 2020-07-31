@@ -10,11 +10,17 @@ import UIKit
 import CoreData
 
 class GroceryItemTableViewController: UITableViewController {
+    
+    // MARK: - Lifecycle Methods
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         ShoppingListController.shared.fetchedResultsController.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
     }
     
     // MARK: - Actions
@@ -23,6 +29,10 @@ class GroceryItemTableViewController: UITableViewController {
     }
     
     // MARK: - Table view data source
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return ShoppingListController.shared.fetchedResultsController.sections?.count ?? 0
+    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ShoppingListController.shared.fetchedResultsController.sections?[section].numberOfObjects ?? 0
@@ -50,6 +60,19 @@ class GroceryItemTableViewController: UITableViewController {
         return view.frame.height / 7
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetailVC" {
+            guard let indexPath = tableView.indexPathForSelectedRow,
+                let destinationVC = segue.destination as? GroceryItemDetailTableViewController else {return}
+            let groceryItem = ShoppingListController.shared.fetchedResultsController.object(at: indexPath)
+            destinationVC.groceryItem = groceryItem
+        }
+    }
+    
+//    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        return ShoppingListController.shared.fetchedResultsController.sectionIndexTitles[section] == "0" ? "Not in cart" : "In cart"
+//    }
+    
     // MARK: - Helpers
     
     func presentAlertController() {
@@ -63,7 +86,7 @@ class GroceryItemTableViewController: UITableViewController {
         let addGroceryItemAction = UIAlertAction(title: "Add", style: .default) { (_) in
             guard let groceryItem = alertController.textFields?[0].text, !groceryItem.isEmpty else {return}
             
-            ShoppingListController.shared.addItem(groceryItem: groceryItem)
+            ShoppingListController.shared.addItem(groceryItem: groceryItem, nutritionInfo: groceryItem)
         }
         
         alertController.addAction(cancelAction)
@@ -107,7 +130,35 @@ extension GroceryItemTableViewController: NSFetchedResultsControllerDelegate {
         }
     }
     
+//    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
+//        switch type {
+//        case .insert:
+//            let indexSet = IndexSet(integer: sectionIndex)
+//            tableView.insertSections(indexSet, with: .automatic)
+//        case .delete:
+//            let indexSet = IndexSet(integer: sectionIndex)
+//            tableView.deleteSections(indexSet, with: .automatic)
+//        default:
+//            fatalError()
+//        }
+//    }
+    
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.endUpdates()
+    }
+}
+
+// MARK: - UISearchBarDelegate
+
+extension GroceryItemDetailTableViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard !searchText.isEmpty else {
+            ShoppingListController.shared.predicate = nil
+            tableView.reloadData()
+            return
+        }
+        let titlePredicate = NSPredicate(format: "title contains[cd] %@", argumentArray: [searchText])
+        ShoppingListController.shared.predicate = titlePredicate
+        tableView.reloadData()
     }
 }

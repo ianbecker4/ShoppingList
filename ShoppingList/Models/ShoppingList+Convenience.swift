@@ -11,9 +11,10 @@ import CoreData
 
 extension ShoppingList {
     
-    convenience init(groceryItem: String, isInCart: Bool = false, context: NSManagedObjectContext = CoreDataStack.context) {
+    convenience init(groceryItem: String, isInCart: Bool = false, nutritionInfo: String, context: NSManagedObjectContext = CoreDataStack.context) {
         self.init(context: context)
         self.groceryItem = groceryItem
         self.isInCart = isInCart
+        self.nutritionInfo = nutritionInfo
     }
 }
