@@ -16,7 +16,6 @@
 		4B8A67FA24D46AAF00938206 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B8A67F924D46AAF00938206 /* Assets.xcassets */; };
 		4B8A67FD24D46AAF00938206 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B8A67FB24D46AAF00938206 /* LaunchScreen.storyboard */; };
 		4B8A680B24D46D8A00938206 /* ShoppingList+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8A680A24D46D8A00938206 /* ShoppingList+Convenience.swift */; };
-		4B8A680D24D46DBA00938206 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B8A680C24D46DBA00938206 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +30,6 @@
 		4B8A67FC24D46AAF00938206 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4B8A67FE24D46AAF00938206 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B8A680A24D46D8A00938206 /* ShoppingList+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShoppingList+Convenience.swift"; sourceTree = "<group>"; };
-		4B8A680C24D46DBA00938206 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +46,6 @@
 		4B8A67E124D46AAE00938206 = {
 			isa = PBXGroup;
 			children = (
-				4B8A680C24D46DBA00938206 /* Default-568h@2x.png */,
 				4B8A67EC24D46AAE00938206 /* ShoppingList */,
 				4B8A67EB24D46AAE00938206 /* Products */,
 			);
@@ -186,7 +183,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B8A67FD24D46AAF00938206 /* LaunchScreen.storyboard in Resources */,
-				4B8A680D24D46DBA00938206 /* Default-568h@2x.png in Resources */,
 				4B8A67FA24D46AAF00938206 /* Assets.xcassets in Resources */,
 				4B8A67F524D46AAE00938206 /* Main.storyboard in Resources */,
 			);

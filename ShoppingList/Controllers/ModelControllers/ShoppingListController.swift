@@ -36,18 +36,27 @@ class ShoppingListController {
     // MARK: - CRUD
     func addItem(groceryItem: String) {
         _ = ShoppingList(groceryItem: groceryItem)
-        
+        saveToPersistence()
     }
     
     func updateIsInCart(groceryItem: ShoppingList) {
         groceryItem.isInCart = !groceryItem.isInCart
-        
+        saveToPersistence()
     }
     
     func removeItem(groceryItem: ShoppingList) {
         let moc = CoreDataStack.context
         moc.delete(groceryItem)
-        
+        saveToPersistence()
     }
     
+    // MARK: - Persistence
+    func saveToPersistence() {
+        let moc = CoreDataStack.context
+        do {
+            try moc.save()
+        } catch {
+            print("Error saving to persistence.")
+        }
+    }
 } // End of Class
