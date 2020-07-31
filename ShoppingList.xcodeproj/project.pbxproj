@@ -7,25 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B637DF324D46E87008D3021 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B637DF224D46E87008D3021 /* CoreDataStack.swift */; };
+		4B637DF524D46F53008D3021 /* ShoppingListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B637DF424D46F53008D3021 /* ShoppingListController.swift */; };
 		4B8A67EE24D46AAE00938206 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8A67ED24D46AAE00938206 /* AppDelegate.swift */; };
 		4B8A67F024D46AAE00938206 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8A67EF24D46AAE00938206 /* SceneDelegate.swift */; };
-		4B8A67F224D46AAE00938206 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8A67F124D46AAE00938206 /* ViewController.swift */; };
 		4B8A67F524D46AAE00938206 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B8A67F324D46AAE00938206 /* Main.storyboard */; };
 		4B8A67F824D46AAE00938206 /* ShoppingList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4B8A67F624D46AAE00938206 /* ShoppingList.xcdatamodeld */; };
 		4B8A67FA24D46AAF00938206 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B8A67F924D46AAF00938206 /* Assets.xcassets */; };
 		4B8A67FD24D46AAF00938206 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B8A67FB24D46AAF00938206 /* LaunchScreen.storyboard */; };
+		4B8A680B24D46D8A00938206 /* ShoppingList+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8A680A24D46D8A00938206 /* ShoppingList+Convenience.swift */; };
+		4B8A680D24D46DBA00938206 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B8A680C24D46DBA00938206 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B637DF224D46E87008D3021 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		4B637DF424D46F53008D3021 /* ShoppingListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListController.swift; sourceTree = "<group>"; };
 		4B8A67EA24D46AAE00938206 /* ShoppingList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B8A67ED24D46AAE00938206 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B8A67EF24D46AAE00938206 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4B8A67F124D46AAE00938206 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4B8A67F424D46AAE00938206 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4B8A67F724D46AAE00938206 /* ShoppingList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShoppingList.xcdatamodel; sourceTree = "<group>"; };
 		4B8A67F924D46AAF00938206 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B8A67FC24D46AAF00938206 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4B8A67FE24D46AAF00938206 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B8A680A24D46D8A00938206 /* ShoppingList+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShoppingList+Convenience.swift"; sourceTree = "<group>"; };
+		4B8A680C24D46DBA00938206 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +48,7 @@
 		4B8A67E124D46AAE00938206 = {
 			isa = PBXGroup;
 			children = (
+				4B8A680C24D46DBA00938206 /* Default-568h@2x.png */,
 				4B8A67EC24D46AAE00938206 /* ShoppingList */,
 				4B8A67EB24D46AAE00938206 /* Products */,
 			);
@@ -58,16 +65,66 @@
 		4B8A67EC24D46AAE00938206 /* ShoppingList */ = {
 			isa = PBXGroup;
 			children = (
+				4B8A680624D46C9800938206 /* Controllers */,
+				4B8A680524D46C6900938206 /* Models */,
+				4B8A67F324D46AAE00938206 /* Main.storyboard */,
+				4B8A680424D46C2C00938206 /* Resources */,
+			);
+			path = ShoppingList;
+			sourceTree = "<group>";
+		};
+		4B8A680424D46C2C00938206 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				4B8A67ED24D46AAE00938206 /* AppDelegate.swift */,
 				4B8A67EF24D46AAE00938206 /* SceneDelegate.swift */,
-				4B8A67F124D46AAE00938206 /* ViewController.swift */,
-				4B8A67F324D46AAE00938206 /* Main.storyboard */,
 				4B8A67F924D46AAF00938206 /* Assets.xcassets */,
 				4B8A67FB24D46AAF00938206 /* LaunchScreen.storyboard */,
 				4B8A67FE24D46AAF00938206 /* Info.plist */,
-				4B8A67F624D46AAE00938206 /* ShoppingList.xcdatamodeld */,
 			);
-			path = ShoppingList;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4B8A680524D46C6900938206 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4B8A67F624D46AAE00938206 /* ShoppingList.xcdatamodeld */,
+				4B8A680A24D46D8A00938206 /* ShoppingList+Convenience.swift */,
+				4B637DF224D46E87008D3021 /* CoreDataStack.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4B8A680624D46C9800938206 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4B8A680824D46CAC00938206 /* ViewControllers */,
+				4B8A680724D46CA300938206 /* ModelControllers */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		4B8A680724D46CA300938206 /* ModelControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4B637DF424D46F53008D3021 /* ShoppingListController.swift */,
+			);
+			path = ModelControllers;
+			sourceTree = "<group>";
+		};
+		4B8A680824D46CAC00938206 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4B8A680924D46CD700938206 /* CustomCells */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		4B8A680924D46CD700938206 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B8A67FD24D46AAF00938206 /* LaunchScreen.storyboard in Resources */,
+				4B8A680D24D46DBA00938206 /* Default-568h@2x.png in Resources */,
 				4B8A67FA24D46AAF00938206 /* Assets.xcassets in Resources */,
 				4B8A67F524D46AAE00938206 /* Main.storyboard in Resources */,
 			);
@@ -141,8 +199,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B8A67F224D46AAE00938206 /* ViewController.swift in Sources */,
+				4B637DF324D46E87008D3021 /* CoreDataStack.swift in Sources */,
+				4B637DF524D46F53008D3021 /* ShoppingListController.swift in Sources */,
 				4B8A67F824D46AAE00938206 /* ShoppingList.xcdatamodeld in Sources */,
+				4B8A680B24D46D8A00938206 /* ShoppingList+Convenience.swift in Sources */,
 				4B8A67EE24D46AAE00938206 /* AppDelegate.swift in Sources */,
 				4B8A67F024D46AAE00938206 /* SceneDelegate.swift in Sources */,
 			);
@@ -290,7 +350,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4R3M5PR4UZ;
-				INFOPLIST_FILE = ShoppingList/Info.plist;
+				INFOPLIST_FILE = ShoppingList/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -308,7 +368,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4R3M5PR4UZ;
-				INFOPLIST_FILE = ShoppingList/Info.plist;
+				INFOPLIST_FILE = ShoppingList/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
